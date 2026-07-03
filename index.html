@@ -15,6 +15,25 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; background: #151310; }
     ::selection { background: rgba(176,120,74,0.35); color: #F3EEE5; }
+
+    @media (max-width: 900px) {
+      .hero-row, .metrics-grid, .case-article, .role-article, .contact-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .metrics-grid > div { border-right: none !important; border-bottom: 1px solid #2B2822; }
+      .metrics-grid > div:last-child { border-bottom: none; }
+      .case-article { gap: 24px !important; }
+      .case-article > p:first-child { display: none; }
+      .case-article > div:last-child { order: -1; }
+      .role-article { gap: 12px !important; }
+      .contact-grid { gap: 60px !important; }
+    }
+
+    @media (max-width: 520px) {
+      nav > div { gap: 20px !important; }
+      header, section, footer > div { padding-left: 24px !important; padding-right: 24px !important; }
+      .contact-form-row { grid-template-columns: 1fr !important; }
+    }
   </style>
 </helmet>
 
@@ -34,8 +53,8 @@
   <header id="top" style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 0 40px;">
     <p style="margin: 0 0 34px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #99927F;">Principal Product Manager <span style="color: var(--ac, #B0784A);">—</span> Prague</p>
     <h1 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(68px, 10.5vw, 148px); line-height: 0.98; letter-spacing: -0.015em; color: #F3EEE5; text-wrap: balance;">Jose Garcia <em style="font-style: italic; color: #D8D1C2;">Valverde</em></h1>
-    <div style="display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: end; margin-top: 56px;">
-      <p style="margin: 0; max-width: 560px; font-size: 20px; line-height: 1.65; color: #99927F; text-wrap: pretty;">Product leader with 7+ years driving vision and growth for B2C digital products — from 0-to-1 launches to scaling platforms serving millions of users.</p>
+    <div class="hero-row" style="display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: end; margin-top: 56px;">
+      <p style="margin: 0; max-width: 560px; font-size: 20px; line-height: 1.65; color: #99927F; text-wrap: pretty;">Product leader driving vision and growth for B2C digital products — from 0-to-1 launches to scaling platforms serving millions of users.</p>
       <div style="display: flex; gap: 32px; padding-bottom: 6px;">
         <a href="#contact" style="font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">Contact me</a>
         <a href="assets/cv.pdf" download="Jose-Garcia-Valverde-CV.pdf" style="font-size: 15px; color: #99927F; text-decoration: none; border-bottom: 1px solid #33302A; padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A); border-bottom-color: var(--ac, #B0784A);">Download CV ↓</a>
@@ -46,7 +65,7 @@
 
   <!-- ===== METRICS CENTERPIECE ===== -->
   <section aria-label="Key metrics" style="max-width: 1240px; margin: 110px auto 0 auto; padding: 0 40px;">
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822;">
+    <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822;">
       <div style="padding: 56px 40px 56px 0; border-right: 1px solid #2B2822;">
         <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(56px, 6.5vw, 96px); line-height: 1; color: #F3EEE5;"><span style="color: var(--ac, #B0784A);">$</span>10M</p>
         <p style="margin: 18px 0 0 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">Annual revenue generated</p>
@@ -69,7 +88,7 @@
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">Five products, 2018 — today</p>
     </div>
 
-    <article style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
+    <article class="case-article" style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.15em; color: #6B655A; padding-top: 14px;">01</p>
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <h3 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.1;"><a href="Avast Portal Detail.dc.html" style="color: #F3EEE5; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Avast Customer Portal →</a></h3>
@@ -82,7 +101,7 @@
       </div>
     </article>
 
-    <article style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
+    <article class="case-article" style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.15em; color: #6B655A; padding-top: 14px;">02</p>
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <h3 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.1;"><a href="Project Detail.dc.html" style="color: #F3EEE5; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">thecooldown.gg →</a></h3>
@@ -95,7 +114,7 @@
       </div>
     </article>
 
-    <article style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
+    <article class="case-article" style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.15em; color: #6B655A; padding-top: 14px;">03</p>
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <h3 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.1;"><a href="Bonder Detail.dc.html" style="color: #F3EEE5; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Bonder →</a></h3>
@@ -108,7 +127,7 @@
       </div>
     </article>
 
-    <article style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
+    <article class="case-article" style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.15em; color: #6B655A; padding-top: 14px;">04</p>
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <h3 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.1;"><a href="Roeme Detail.dc.html" style="color: #F3EEE5; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Roeme →</a></h3>
@@ -121,7 +140,7 @@
       </div>
     </article>
 
-    <article style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
+    <article class="case-article" style="display: grid; grid-template-columns: 90px 1fr 380px; gap: 48px; align-items: start; padding: 64px 0; border-top: 1px solid #2B2822;">
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.15em; color: #6B655A; padding-top: 14px;">05</p>
       <div style="display: flex; flex-direction: column; gap: 20px;">
         <h3 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(32px, 3.4vw, 48px); line-height: 1.1;"><a href="Guru Detail.dc.html" style="color: #F3EEE5; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Guru — Finance Platform →</a></h3>
@@ -144,7 +163,7 @@
       </div>
 
       <sc-for list="{{ roles }}" as="r" hint-placeholder-count="7">
-        <article style="display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; padding: 48px 0; border-top: 1px solid #2B2822;">
+        <article class="role-article" style="display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; padding: 48px 0; border-top: 1px solid #2B2822;">
           <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 8px;">
             <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #6B655A;">{{ r.dates }}</p>
             <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ac, #B0784A);">{{ r.org }}</p>
@@ -161,7 +180,7 @@
 
   <!-- ===== CONTACT ===== -->
   <section id="contact" style="border-top: 1px solid #2B2822;">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 120px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;">
+    <div class="contact-grid" style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 120px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;">
       <div style="display: flex; flex-direction: column; gap: 32px;">
         <h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); line-height: 1.05; color: #F3EEE5; text-wrap: balance;">Let&rsquo;s build something <em style="color: #D8D1C2;">great</em> together.</h2>
         <p style="margin: 0; max-width: 460px; font-size: 18px; line-height: 1.7; color: #99927F; text-wrap: pretty;">I&rsquo;m open to new opportunities &mdash; senior IC, leadership, advisory, or consulting roles. Feel free to reach out about anything.</p>
@@ -172,7 +191,7 @@
       </div>
 
       <form onSubmit="{{ submitForm }}" style="display: flex; flex-direction: column; gap: 40px; padding-top: 14px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div class="contact-form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
           <label style="display: flex; flex-direction: column; gap: 12px;">
             <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B655A;">First name</span>
             <input name="firstName" type="text" placeholder="Jane" style="background: transparent; border: none; border-bottom: 1px solid #33302A; padding: 8px 0; font-size: 16px; color: #F3EEE5; font-family: inherit; outline: none;" style-focus="border-bottom-color: var(--ac, #B0784A);">
