@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #151310; }
+    ::selection { background: rgba(176,120,74,0.35); color: #F3EEE5; }
+  </style>
+</helmet>
+
+<div style="--ac: {{ accent }}; background: #151310; color: #F3EEE5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased;">
+
+  <!-- ===== NAV ===== -->
+  <nav style="display: flex; justify-content: space-between; align-items: baseline; max-width: 1240px; margin: 0 auto; padding: 36px 40px 0 40px;">
+    <a href="Editorial Portfolio.dc.html" style="font-family: 'Instrument Serif', serif; font-size: 22px; color: #F3EEE5; text-decoration: none;">JGV<span style="color: var(--ac, #B0784A);">.</span></a>
+    <a href="Editorial Portfolio.dc.html#work" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← All work</a>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <header style="max-width: 1240px; margin: 0 auto; padding: 120px 40px 0 40px;">
+    <p style="margin: 0 0 34px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #99927F;">{{ kicker }}</p>
+    <h1 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(60px, 9vw, 130px); line-height: 0.98; letter-spacing: -0.015em; color: #F3EEE5; text-wrap: balance;">{{ title }}</h1>
+    <p style="margin: 44px 0 0 0; max-width: 680px; font-size: 21px; line-height: 1.6; color: #99927F; text-wrap: pretty;">{{ subtitle }}</p>
+  </header>
+
+  <!-- ===== METRIC BAND ===== -->
+  <section aria-label="Key metrics" style="max-width: 1240px; margin: 100px auto 0 auto; padding: 0 40px;">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822; overflow: hidden;">
+      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3">
+        <div style="padding: 56px 32px; border-right: 1px solid #2B2822; margin-right: -1px;">
+          <div style="width: 28px; height: 2px; background: var(--ac, #B0784A); margin-bottom: 28px;"></div>
+          <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(52px, 6vw, 88px); line-height: 1; color: #F3EEE5;">{{ m.value }}</p>
+          <p style="margin: 18px 0 0 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">{{ m.label }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ===== CONTEXT ===== -->
+  <section style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 0 40px;">
+    <sc-for list="{{ sections }}" as="s" hint-placeholder-count="3">
+      <div style="display: grid; grid-template-columns: 240px 1fr; gap: 48px; align-items: start; padding: 44px 0; border-top: 1px solid #2B2822;">
+        <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ac, #B0784A); padding-top: 6px;">{{ s.label }}</p>
+        <p style="margin: 0; max-width: 720px; font-size: 19px; line-height: 1.75; color: #C4BDAD; text-wrap: pretty;">{{ s.text }}</p>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- ===== VISUALS ===== -->
+  <section aria-label="Product visuals" style="max-width: 1240px; margin: 0 auto; padding: 110px 40px 0 40px;">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+      <div style="aspect-ratio: 16 / 9; background: repeating-linear-gradient(45deg, #1C1915 0px, #1C1915 12px, #17150F 12px, #17150F 24px); border: 1px solid #2B2822; display: flex; align-items: center; justify-content: center;">
+        <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #6B655A;">{{ slotLabelA }}</p>
+      </div>
+      <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
+        <div style="background: #1C1915; border: 1px solid #2B2822; overflow: hidden;">
+          <img src="assets/cooldown.png" alt="thecooldown.gg brand" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div style="background: repeating-linear-gradient(45deg, #1C1915 0px, #1C1915 12px, #17150F 12px, #17150F 24px); border: 1px solid #2B2822; display: flex; align-items: center; justify-content: center;">
+          <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #6B655A;">{{ slotLabelB }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUTCOME ===== -->
+  <section style="max-width: 1240px; margin: 0 auto; padding: 140px 40px 130px 40px;">
+    <div style="border-top: 1px solid #2B2822; padding-top: 72px;">
+      <p style="margin: 0 0 40px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">The outcome</p>
+      <p style="margin: 0; max-width: 900px; font-family: 'Instrument Serif', serif; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.25; color: #F3EEE5; text-wrap: balance;">{{ outcome }}</p>
+      <a href="Editorial Portfolio.dc.html#work" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to all work</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="border-top: 1px solid #2B2822;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 36px 40px; display: flex; justify-content: space-between; align-items: baseline;">
+      <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #6B655A;">Jose Garcia Valverde — 2026</p>
+      <a href="Editorial Portfolio.dc.html" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Main portfolio</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — AB InBev, 2020 · 2023&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;thecooldown.gg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Pitched and launched AB InBev's first esports platform from zero — then scaled it with a team of five.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;From an internal pitch to AB InBev's first esports platform —xxxxxxxxxxxxxxx&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      accent: p.accent ?? '#B0784A',
+      kicker: p.kicker ?? 'Case study — AB InBev, 2020 · 2023',
+      title: p.title ?? 'thecooldown.gg',
+      subtitle: p.subtitle ?? 'Product Lead. Pitched and launched AB InBev\u2019s first esports platform from zero — then scaled it with a team of five.',
+      metrics: p.metrics ?? [
+        { value: '4,500%', label: 'User growth in 15 months' },
+        { value: '$350K+', label: 'Return on investment' },
+        { value: '$150k', label: 'Expansion funding secured' },
+      ],
+      sections: p.sections ?? [
+        {
+          label: 'The problem',
+          text: 'AB InBev wanted a credible way into gaming and esports — a fast-growing audience its traditional brand channels couldn\u2019t reach. There was no product, no team, and no playbook: just a hypothesis that the company could own a destination where esports fans actually spend time.',
+        },
+        {
+          label: 'My role',
+          text: 'I pitched thecooldown.gg internally, secured the initial budget, and launched the MVP from zero. Promoted to Product Lead in 15 months, I led a team of five across product, content, and partnerships — owning strategy, the roadmap, and P&L conversations with senior stakeholders.',
+        },
+        {
+          label: 'The approach',
+          text: 'We shipped fast and measured everything: an MVP first, then co-branded campaigns with Bud Light and Fnatic to drive acquisition, and influencer partnerships to sustain it. Growth results unlocked $150k in expansion funding and made the platform AB InBev\u2019s proof point for new digital ventures.',
+        },
+      ],
+      slotLabelA: '[ hi-res platform screenshot ]',
+      slotLabelB: '[ campaign / event shot ]',
+      outcome: p.outcome ?? 'From an internal pitch to AB InBev\u2019s first esports platform — 4,500% user growth, $350K+ ROI, and a template the company still uses to evaluate new digital ventures.',
+    };
+  }
+}
+</script>
+</body>
+</html>
