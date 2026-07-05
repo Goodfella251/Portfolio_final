@@ -20,8 +20,9 @@
       .hero-row, .metrics-grid, .case-article, .role-article, .contact-grid {
         grid-template-columns: 1fr !important;
       }
-      .metrics-grid > div { border-right: none !important; border-bottom: 1px solid #2B2822; }
+      .metrics-grid > div { border-right: none !important; border-bottom: 1px solid #2B2822; padding: 48px 0 !important; }
       .metrics-grid > div:last-child { border-bottom: none; }
+      .section-head { flex-direction: column !important; align-items: flex-start !important; gap: 16px; }
       .case-article { gap: 24px !important; }
       .case-article > p:first-child { display: none; }
       .case-article > div:last-child { order: -1; }
@@ -55,7 +56,7 @@
     <h1 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(68px, 10.5vw, 148px); line-height: 0.98; letter-spacing: -0.015em; color: #F3EEE5; text-wrap: balance;">Jose Garcia <em style="font-style: italic; color: #D8D1C2;">Valverde</em></h1>
     <div class="hero-row" style="display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: end; margin-top: 56px;">
       <p style="margin: 0; max-width: 560px; font-size: 20px; line-height: 1.65; color: #99927F; text-wrap: pretty;">Product leader driving vision and growth for B2C digital products — from 0-to-1 launches to scaling platforms serving millions of users.</p>
-      <div style="display: flex; gap: 32px; padding-bottom: 6px;">
+      <div style="display: flex; flex-wrap: wrap; gap: 32px; padding-bottom: 6px;">
         <a href="#contact" style="font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">Contact me</a>
         <a href="assets/cv.pdf" download="Jose-Garcia-Valverde-CV.pdf" style="font-size: 15px; color: #99927F; text-decoration: none; border-bottom: 1px solid #33302A; padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A); border-bottom-color: var(--ac, #B0784A);">Download CV ↓</a>
         <a href="https://linkedin.com/in/jtgv/" target="_blank" rel="noopener" style="font-size: 15px; color: #99927F; text-decoration: none; border-bottom: 1px solid #33302A; padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A); border-bottom-color: var(--ac, #B0784A);">LinkedIn ↗</a>
@@ -83,7 +84,7 @@
 
   <!-- ===== CASE STUDIES ===== -->
   <section id="work" style="max-width: 1240px; margin: 0 auto; padding: 150px 40px 140px 40px;">
-    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+    <div class="section-head" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
       <h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); color: #F3EEE5;">Selected work</h2>
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">Five products, 2018 — today</p>
     </div>
@@ -157,7 +158,7 @@
   <!-- ===== CAREER ===== -->
   <section id="career" style="border-top: 1px solid #2B2822;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 140px 40px;">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
+      <div class="section-head" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
         <h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); color: #F3EEE5;">Career</h2>
         <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">The roles that shaped my product career</p>
       </div>
