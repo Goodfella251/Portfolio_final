@@ -22,8 +22,8 @@
 
   <!-- ===== NAV ===== -->
   <nav style="display: flex; justify-content: space-between; align-items: baseline; max-width: 1240px; margin: 0 auto; padding: 36px 40px 0 40px;">
-    <a href="Editorial Portfolio.dc.html" style="font-family: 'Instrument Serif', serif; font-size: 22px; color: #F3EEE5; text-decoration: none;">JGV<span style="color: var(--ac, #B0784A);">.</span></a>
-    <a href="Editorial Portfolio.dc.html#work" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← All work</a>
+    <a href="index.html" style="font-family: 'Instrument Serif', serif; font-size: 22px; color: #F3EEE5; text-decoration: none;">JGV<span style="color: var(--ac, #B0784A);">.</span></a>
+    <a href="index.html#work" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← All work</a>
   </nav>
 
   <!-- ===== HEADER ===== -->
@@ -35,8 +35,8 @@
 
   <!-- ===== METRIC BAND ===== -->
   <section aria-label="Key metrics" style="max-width: 1240px; margin: 100px auto 0 auto; padding: 0 40px;">
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822; overflow: hidden;">
-      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3">
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822; overflow: hidden;">
+      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="2">
         <div style="padding: 56px 32px; border-right: 1px solid #2B2822; margin-right: -1px;">
           <div style="width: 28px; height: 2px; background: var(--ac, #B0784A); margin-bottom: 28px;"></div>
           <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(52px, 6vw, 88px); line-height: 1; color: #F3EEE5;">{{ m.value }}</p>
@@ -64,7 +64,7 @@
       </div>
       <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
         <div style="background: #1C1915; border: 1px solid #2B2822; overflow: hidden;">
-          <img src="assets/bonder.png" alt="Bonder brand" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <img src="assets/cooldown.png" alt="thecooldown.gg brand" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div style="background: repeating-linear-gradient(45deg, #1C1915 0px, #1C1915 12px, #17150F 12px, #17150F 24px); border: 1px solid #2B2822; display: flex; align-items: center; justify-content: center;">
           <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #6B655A;">{{ slotLabelB }}</p>
@@ -78,7 +78,7 @@
     <div style="border-top: 1px solid #2B2822; padding-top: 72px;">
       <p style="margin: 0 0 40px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">The outcome</p>
       <p style="margin: 0; max-width: 900px; font-family: 'Instrument Serif', serif; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.25; color: #F3EEE5; text-wrap: balance;">{{ outcome }}</p>
-      <a href="Editorial Portfolio.dc.html#work" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to all work</a>
+      <a href="index.html#work" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to all work</a>
     </div>
   </section>
 
@@ -86,43 +86,42 @@
   <footer style="border-top: 1px solid #2B2822;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 36px 40px; display: flex; justify-content: space-between; align-items: baseline;">
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #6B655A;">Jose Garcia Valverde — 2026</p>
-      <a href="Editorial Portfolio.dc.html" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Main portfolio</a>
+      <a href="index.html" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Main portfolio</a>
     </div>
   </footer>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — STRV, 2023 · 2024&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Bonder&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Senior Product Manager. An iOS &amp; Android social app taken from ideation to market-ready release — full lifecycle ownership.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;A social app taken from a raw concept to market-ready on both platforms — delivered on budget, with stakeholders aligned at every step.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — AB InBev, 2020 · 2023&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;thecooldown.gg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Pitched and launched AB InBev's first esports platform from zero — then scaled it with a team of five.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;From an internal pitch to AB InBev's first esports platform —xxxxxxxxxxxxxxx&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
       accent: p.accent ?? '#B0784A',
-      kicker: p.kicker ?? 'Case study — STRV, 2023 · 2024',
-      title: p.title ?? 'Bonder',
-      subtitle: p.subtitle ?? 'Senior Product Manager. An iOS & Android social app taken from ideation to market-ready release — full lifecycle ownership.',
+      kicker: p.kicker ?? 'Case study — AB InBev, 2020 · 2023',
+      title: p.title ?? 'thecooldown.gg',
+      subtitle: p.subtitle ?? 'Product Lead. Pitched and launched AB InBev\u2019s first esports platform from zero — then scaled it with a team of five.',
       metrics: p.metrics ?? [
-        { value: '0\u21921', label: 'Ideation to market-ready' },
-        { value: '2', label: 'Native platforms shipped' },
-        { value: 'C-level', label: 'Stakeholder ownership' },
+        { value: '4,500%', label: 'User growth in 15 months' },
+        { value: '$350K+', label: 'Return on investment' },
       ],
       sections: p.sections ?? [
         {
           label: 'The problem',
-          text: 'Bonder started as a concept for a social app with no product definition behind it — the client had an idea and a budget, and needed someone to turn that into something real people would use on iOS and Android.',
+          text: 'AB InBev wanted a credible way into gaming and esports — a fast-growing audience its traditional brand channels couldn\u2019t reach. There was no product, no team, and no playbook: just a hypothesis that the company could own a destination where esports fans actually spend time.',
         },
         {
           label: 'My role',
-          text: 'At STRV I owned the full product lifecycle: shaping the concept into a roadmap, managing the budget, running the delivery team, and holding C-level stakeholder expectations through every release decision.',
+          text: 'I pitched thecooldown.gg internally, secured the initial budget, and launched the MVP from zero. Promoted to Product Lead in 15 months, I led a team of five across product, content, and partnerships — owning strategy, the roadmap, and P&L conversations with senior stakeholders.',
         },
         {
           label: 'The approach',
-          text: 'Discovery first, then tight build-measure loops — validating the social mechanics early, cutting scope where the data said to, and driving both native apps to a market-ready release in parallel.',
+          text: 'We shipped fast and measured everything: an MVP first, then co-branded campaigns with Bud Light and Fnatic to drive acquisition, and influencer partnerships to sustain it. Growth results unlocked $150k in expansion funding and made the platform AB InBev\u2019s proof point for new digital ventures.',
         },
       ],
-      slotLabelA: '[ hi-res app screenshots ]',
-      slotLabelB: '[ onboarding flow shot ]',
-      outcome: p.outcome ?? 'A social app taken from a raw concept to market-ready on both platforms — delivered on budget, with stakeholders aligned at every step.',
+      slotLabelA: '[ hi-res platform screenshot ]',
+      slotLabelB: '[ campaign / event shot ]',
+      outcome: p.outcome ?? 'From an internal pitch to AB InBev\u2019s first esports platform — 4,500% user growth, $350K+ ROI, and a template the company still uses to evaluate new digital ventures.',
     };
   }
 }

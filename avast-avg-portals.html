@@ -22,8 +22,8 @@
 
   <!-- ===== NAV ===== -->
   <nav style="display: flex; justify-content: space-between; align-items: baseline; max-width: 1240px; margin: 0 auto; padding: 36px 40px 0 40px;">
-    <a href="Editorial Portfolio.dc.html" style="font-family: 'Instrument Serif', serif; font-size: 22px; color: #F3EEE5; text-decoration: none;">JGV<span style="color: var(--ac, #B0784A);">.</span></a>
-    <a href="Editorial Portfolio.dc.html#work" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← All work</a>
+    <a href="index.html" style="font-family: 'Instrument Serif', serif; font-size: 22px; color: #F3EEE5; text-decoration: none;">JGV<span style="color: var(--ac, #B0784A);">.</span></a>
+    <a href="index.html#work" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← All work</a>
   </nav>
 
   <!-- ===== HEADER ===== -->
@@ -35,8 +35,8 @@
 
   <!-- ===== METRIC BAND ===== -->
   <section aria-label="Key metrics" style="max-width: 1240px; margin: 100px auto 0 auto; padding: 0 40px;">
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822; overflow: hidden;">
-      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3">
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822; overflow: hidden;">
+      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="2">
         <div style="padding: 56px 32px; border-right: 1px solid #2B2822; margin-right: -1px;">
           <div style="width: 28px; height: 2px; background: var(--ac, #B0784A); margin-bottom: 28px;"></div>
           <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(52px, 6vw, 88px); line-height: 1; color: #F3EEE5;">{{ m.value }}</p>
@@ -64,7 +64,7 @@
       </div>
       <div style="display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
         <div style="background: #1C1915; border: 1px solid #2B2822; overflow: hidden;">
-          <img src="assets/guru.png" alt="Guru — Finance Platform brand" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <img src="assets/avast.png" alt="Avast & AVG Portals brand" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <div style="background: repeating-linear-gradient(45deg, #1C1915 0px, #1C1915 12px, #17150F 12px, #17150F 24px); border: 1px solid #2B2822; display: flex; align-items: center; justify-content: center;">
           <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #6B655A;">{{ slotLabelB }}</p>
@@ -78,7 +78,7 @@
     <div style="border-top: 1px solid #2B2822; padding-top: 72px;">
       <p style="margin: 0 0 40px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">The outcome</p>
       <p style="margin: 0; max-width: 900px; font-family: 'Instrument Serif', serif; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.25; color: #F3EEE5; text-wrap: balance;">{{ outcome }}</p>
-      <a href="Editorial Portfolio.dc.html#work" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to all work</a>
+      <a href="index.html#work" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to all work</a>
     </div>
   </section>
 
@@ -86,43 +86,42 @@
   <footer style="border-top: 1px solid #2B2822;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 36px 40px; display: flex; justify-content: space-between; align-items: baseline;">
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #6B655A;">Jose Garcia Valverde — 2026</p>
-      <a href="Editorial Portfolio.dc.html" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Main portfolio</a>
+      <a href="index.html" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Main portfolio</a>
     </div>
   </footer>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — AB InBev, 2019 · 2020&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Guru — Finance Platform&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Product Manager, Finance Systems. A zero-downtime, zero-bug launch of a critical internal finance platform.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;A business-critical finance platform launched with zero downtime and zero bugs — and users who actually liked the change, at NPS 33.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#D9A441&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — Gen Digital, 2024 · Present&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Avast &amp; AVG Portals&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Leading product strategy for the customer portals behind Avast and AVG subscriptions — serving 400M+ users worldwide.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$10M in annual revenue from portals serving 400M+ users — churn down 1% via AI dynamic pricing, with delivery velocity doubled.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
       accent: p.accent ?? '#B0784A',
-      kicker: p.kicker ?? 'Case study — AB InBev, 2019 · 2020',
-      title: p.title ?? 'Guru — Finance Platform',
-      subtitle: p.subtitle ?? 'Product Manager, Finance Systems. A zero-downtime, zero-bug launch of a critical internal finance platform.',
+      kicker: p.kicker ?? 'Case study — Gen Digital, 2024 · Present',
+      title: p.title ?? 'Avast & AVG Portals',
+      subtitle: p.subtitle ?? 'Principal Product Manager. Leading product strategy for the customer portals behind Avast and AVG subscriptions — serving 400M+ users worldwide.',
       metrics: p.metrics ?? [
-        { value: '0', label: 'Downtime and launch bugs' },
-        { value: '10', label: 'Training sessions across Europe' },
-        { value: 'NPS 33', label: 'Post-launch satisfaction' },
+        { value: '$10M', label: 'Annual revenue generated' },
+        { value: '400M+', label: 'Users served worldwide' },
       ],
       sections: p.sections ?? [
         {
           label: 'The problem',
-          text: 'Guru sat at the heart of AB InBev\u2019s European finance operations — a platform the business could not afford to see fail. Replacing it meant migrating critical workflows for teams across the continent with no tolerance for downtime or data errors.',
+          text: 'Avast and AVG\u2019s customer portals are where 400M+ users manage their subscriptions — and where churn quietly happens. Pricing was static, delivery was slow, and the portals were treated as plumbing rather than a revenue product.',
         },
         {
           label: 'My role',
-          text: 'I owned the launch end to end as Product Manager for Finance Systems: release planning, risk management, and the change management programme that had to bring every affected team along.',
+          text: 'As Principal Product Manager at Gen Digital, I own product strategy for customer portal subscriptions across both brands — the roadmap, the P&L conversation, and the cross-functional teams that ship it.',
         },
         {
           label: 'The approach',
-          text: 'Relentless de-risking — staged rollouts, exhaustive UAT with the finance teams themselves, and 10 in-person training sessions across Europe so no one met the platform for the first time on launch day. The result: zero downtime, zero bugs, NPS 33.',
+          text: 'We reframed the portals as a growth product: AI dynamic pricing to fight churn, a leaner delivery pipeline that doubled velocity, and a portfolio-level view of revenue rather than brand-by-brand fixes. Churn came down 1% and the portals now generate $10M in annual revenue.',
         },
       ],
-      slotLabelA: '[ hi-res platform screenshot ]',
-      slotLabelB: '[ dashboard / workflow shot ]',
-      outcome: p.outcome ?? 'A business-critical finance platform launched with zero downtime and zero bugs — and users who actually liked the change, at NPS 33.',
+      slotLabelA: '[ hi-res portal screenshot ]',
+      slotLabelB: '[ pricing flow shot ]',
+      outcome: p.outcome ?? '$10M in annual revenue from portals serving 400M+ users — churn down 1% via AI dynamic pricing, with delivery velocity doubled.',
     };
   }
 }
