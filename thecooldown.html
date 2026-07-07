@@ -106,7 +106,7 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — AB InBev, 2020 · 2023&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;thecooldown.gg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Pitched and launched AB InBev's first esports platform from zero — then scaled it with a team of five.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;From an internal pitch to AB InBev's first esports platform —xxxxxxxxxxxxxxx&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — AB InBev, 2020 · 2023&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;thecooldown.gg&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Pitched and launched AB InBev's first esports platform from zero — then scaled it with a team of five.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;The initiative bridged established internal brands with a global gaming audience, proving product-market fit in a completely new category.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
@@ -117,7 +117,7 @@ class Component extends DCLogic {
       subtitle: p.subtitle ?? 'Product Lead. Pitched and launched AB InBev\u2019s first esports platform from zero — then scaled it with a team of five.',
       metrics: p.metrics ?? [
         { value: '4,500%', label: 'User growth in 15 months' },
-        { value: '$350K+', label: 'Return on investment' },
+        { value: '$350K+', label: 'Yearly return on investment' },
       ],
       sections: p.sections ?? [
         {
@@ -126,16 +126,16 @@ class Component extends DCLogic {
         },
         {
           label: 'My role',
-          text: 'I pitched thecooldown.gg internally, secured the initial budget, and launched the MVP from zero. Promoted to Product Lead in 15 months, I led a team of five across product, content, and partnerships — owning strategy, the roadmap, and P&L conversations with senior stakeholders.',
+          text: 'I pitched and launched thecooldown.gg, AB InBev’s first esports platform, to solve three strategic challenges: establishing an authentic market entry, building a dedicated community space for gaming fans, and capturing vital first-party data. After securing initial funding and delivering the MVP from zero, I was promoted to Product Lead within 15 months, directing a five-person team across product, content, and partnerships, and owning the strategic roadmap and P&L conversations with senior executives.',
         },
         {
           label: 'The approach',
-          text: 'We shipped fast and measured everything: an MVP first, then co-branded campaigns with Bud Light and Fnatic to drive acquisition, and influencer partnerships to sustain it. Growth results unlocked $150k in expansion funding and made the platform AB InBev\u2019s proof point for new digital ventures.',
+          text: 'After validating the concept through live events, we executed a dual-pronged growth strategy. On the B2B side, we scaled our venue network by educating bar owners on the commercial value of esports and de-risking their participation. On the B2C side, we drove user acquisition through co-branded Bud Light campaigns, a grassroots digital strategy spanning Discord, micro-communities, and influencers. This approach unlocked premium partnerships with Team Liquid and Fnatic, with the latter generating $320K in incremental revenue and 9,000 new signups.',
         },
       ],
       slotLabelA: '[ hi-res platform screenshot ]',
       slotLabelB: '[ campaign / event shot ]',
-      outcome: p.outcome ?? 'From an internal pitch to AB InBev\u2019s first esports platform — 4,500% user growth, $350K+ ROI, and a template the company still uses to evaluate new digital ventures.',
+      outcome: p.outcome ?? 'The initiative bridged established internal brands with a global gaming audience, proving product-market fit in a completely new category.',
     };
   }
 }

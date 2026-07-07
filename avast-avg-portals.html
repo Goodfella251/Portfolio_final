@@ -106,15 +106,15 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#D9A441&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — Gen Digital, 2024 · Present&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Avast &amp; AVG Portals&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Leading product strategy for the customer portals behind Avast and AVG subscriptions — serving 400M+ users worldwide.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$10M in annual revenue from portals serving 400M+ users — churn down 1% via AI dynamic pricing, with delivery velocity doubled.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#D9A441&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — Gen Digital, 2024 · 2026&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Avast &amp; AVG Portals&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Leading product strategy for the customer portals behind Avast and AVG multi-product subscriptions, serving 400M+ users worldwide.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Generated $10M in annual revenue, drove a 1% churn reduction via AI dynamic pricing, and doubled engineering delivery velocity.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
       accent: p.accent ?? '#B0784A',
-      kicker: p.kicker ?? 'Case study — Gen Digital, 2024 · Present',
+      kicker: p.kicker ?? 'Case study — Gen Digital, 2024 · 2026',
       title: p.title ?? 'Avast & AVG Portals',
-      subtitle: p.subtitle ?? 'Principal Product Manager. Leading product strategy for the customer portals behind Avast and AVG subscriptions — serving 400M+ users worldwide.',
+      subtitle: p.subtitle ?? 'Leading product strategy for the customer portals behind Avast and AVG multi-product subscriptions, serving 400M+ users worldwide.',
       metrics: p.metrics ?? [
         { value: '$10M', label: 'Annual revenue generated' },
         { value: '400M+', label: 'Users served worldwide' },
@@ -122,20 +122,20 @@ class Component extends DCLogic {
       sections: p.sections ?? [
         {
           label: 'The problem',
-          text: 'Avast and AVG\u2019s customer portals are where 400M+ users manage their subscriptions — and where churn quietly happens. Pricing was static, delivery was slow, and the portals were treated as plumbing rather than a revenue product.',
+          text: 'Delivery processes were fragmented, developers lacked clear direction, and the roadmap was driven by sales rather than product vision.',
         },
         {
           label: 'My role',
-          text: 'As Principal Product Manager at Gen Digital, I own product strategy for customer portal subscriptions across both brands — the roadmap, the P&L conversation, and the cross-functional teams that ship it.',
+          text: 'Aligned with sales on key priorities and critical fixes, established structured delivery workflows with the development team, and launched a Threat Intelligence dashboard that reduced customer churn.',
         },
         {
           label: 'The approach',
-          text: 'We reframed the portals as a growth product: AI dynamic pricing to fight churn, a leaner delivery pipeline that doubled velocity, and a portfolio-level view of revenue rather than brand-by-brand fixes. Churn came down 1% and the portals now generate $10M in annual revenue.',
+          text: 'Shifted the product strategy from fragmented brand updates to a unified growth engine, aligning cross-functional squads to revamp the delivery pipeline and piloting AI dynamic pricing to proactively drive customer retention.',
         },
       ],
       slotLabelA: '[ hi-res portal screenshot ]',
       slotLabelB: '[ pricing flow shot ]',
-      outcome: p.outcome ?? '$10M in annual revenue from portals serving 400M+ users — churn down 1% via AI dynamic pricing, with delivery velocity doubled.',
+      outcome: p.outcome ?? 'Generated $10M in annual revenue, drove a 1% churn reduction via AI dynamic pricing, and doubled engineering delivery velocity.',
     };
   }
 }
