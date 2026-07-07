@@ -58,7 +58,7 @@
       <p style="margin: 0; max-width: 560px; font-size: 20px; line-height: 1.65; color: #99927F; text-wrap: pretty;">Product leader driving vision and growth for digital products — from 0-to-1 launches to scaling platforms serving millions of users.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 32px; padding-bottom: 6px;">
         <a href="#contact" style="font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">Contact me</a>
-        <a href="assets/cv.pdf" download="Jose-Garcia-Valverde-CV.pdf" style="font-size: 15px; color: #99927F; text-decoration: none; border-bottom: 1px solid #33302A; padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A); border-bottom-color: var(--ac, #B0784A);">Download CV ↓</a>
+        <a href="/Jose_Garcia_Valverde_CV.pdf" download style="font-size: 15px; color: #99927F; text-decoration: none; border-bottom: 1px solid #33302A; padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A); border-bottom-color: var(--ac, #B0784A);">Download CV ↓</a>
         <a href="https://linkedin.com/in/jtgv/" target="_blank" rel="noopener" style="font-size: 15px; color: #99927F; text-decoration: none; border-bottom: 1px solid #33302A; padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A); border-bottom-color: var(--ac, #B0784A);">LinkedIn ↗</a>
       </div>
     </div>
@@ -68,11 +68,11 @@
   <section aria-label="Key metrics" style="max-width: 1240px; margin: 110px auto 0 auto; padding: 0 40px;">
     <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822;">
       <div style="padding: 56px 40px 56px 0; border-right: 1px solid #2B2822;">
-        <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(56px, 6.5vw, 96px); line-height: 1; color: #F3EEE5;">4</p>
+        <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(56px, 6.5vw, 96px); line-height: 1; color: #F3EEE5;"><span style="color: var(--ac, #B0784A);">4</span></p>
         <p style="margin: 18px 0 0 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">Products launched</p>
       </div>
       <div style="padding: 56px 40px; border-right: 1px solid #2B2822;">
-        <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(56px, 6.5vw, 96px); line-height: 1; color: #F3EEE5;">400M</p>
+        <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(56px, 6.5vw, 96px); line-height: 1; color: #F3EEE5;"><span style="color: var(--ac, #B0784A);">400</span>M</p>
         <p style="margin: 18px 0 0 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">Users served in Avast &amp; AVG portals</p>
       </div>
       <div style="padding: 56px 0 56px 40px;">
@@ -147,7 +147,6 @@
     <div style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 140px 40px;">
       <div class="section-head" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
         <h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); color: #F3EEE5;">Career</h2>
-        <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">The roles that shaped my product career</p>
       </div>
 
       <sc-for list="{{ roles }}" as="r" hint-placeholder-count="7">
@@ -176,6 +175,7 @@
       </div>
 
       <form onSubmit="{{ submitForm }}" style="display: flex; flex-direction: column; gap: 40px; padding-top: 14px;">
+        <input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display: none;">
         <div class="contact-form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
           <label style="display: flex; flex-direction: column; gap: 12px;">
             <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6B655A;">First name</span>
@@ -215,13 +215,40 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
 class Component extends DCLogic {
-  submitForm = (e) => {
+  // Get your access key at https://web3forms.com (sent to your email, free)
+  WEB3FORMS_ACCESS_KEY = '49a174fe-c79a-4041-9b7f-baaf3d5244c0';
+
+  submitForm = async (e) => {
     e.preventDefault();
-    const f = e.target.elements;
-    const name = [f.firstName.value, f.lastName.value].filter(Boolean).join(' ');
-    const subject = encodeURIComponent(f.subject.value || 'Portfolio inquiry');
-    const body = encodeURIComponent(`${f.message.value}\n\n— ${name || 'Anonymous'} (${f.email.value})`);
-    window.location.href = `mailto:hello@example.com?subject=${subject}&body=${body}`;
+    const form = e.target;
+    const f = form.elements;
+    const btn = form.querySelector('button[type="submit"]');
+    if (f.botcheck && f.botcheck.checked) return;
+    const original = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: this.WEB3FORMS_ACCESS_KEY,
+          name: [f.firstName.value, f.lastName.value].filter(Boolean).join(' ') || 'Anonymous',
+          email: f.email.value,
+          subject: f.subject.value || 'Portfolio inquiry',
+          message: f.message.value,
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message);
+      form.reset();
+      btn.textContent = 'Message sent ✓';
+    } catch (err) {
+      btn.textContent = 'Something went wrong — try again';
+      btn.disabled = false;
+      return;
+    }
+    setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 4000);
   };
 
   renderVals() {
