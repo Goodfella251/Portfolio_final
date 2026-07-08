@@ -15,6 +15,7 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; background: #151310; }
     ::selection { background: rgba(176,120,74,0.35); color: #F3EEE5; }
+    :root { --page-pad: 40px; }
 
     @media (max-width: 900px) {
       .hero-row, .metrics-grid, .case-article, .role-article, .contact-grid {
@@ -30,9 +31,14 @@
       .contact-grid { gap: 60px !important; }
     }
 
+    @media (max-width: 640px) {
+      .hero-name { font-size: clamp(44px, 16.5vw, 68px) !important; line-height: 1 !important; }
+      .hero-name em { display: block; margin-left: -0.06em; }
+    }
+
     @media (max-width: 520px) {
+      :root { --page-pad: 24px; }
       nav > div { gap: 20px !important; }
-      header, section, footer > div { padding-left: 24px !important; padding-right: 24px !important; }
       .contact-form-row { grid-template-columns: 1fr !important; }
     }
   </style>
@@ -41,7 +47,7 @@
 <div style="--ac: {{ accent }}; background: #151310; color: #F3EEE5; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased;">
 
   <!-- ===== NAV ===== -->
-  <nav style="display: flex; justify-content: space-between; align-items: baseline; max-width: 1240px; margin: 0 auto; padding: 36px 40px 0 40px;">
+  <nav style="display: flex; justify-content: space-between; align-items: baseline; max-width: 1240px; margin: 0 auto; padding: 36px var(--page-pad) 0 var(--page-pad);">
     <a href="#top" style="font-family: 'Instrument Serif', serif; font-size: 22px; color: #F3EEE5; text-decoration: none;">JGV<span style="color: var(--ac, #B0784A);">.</span></a>
     <div style="display: flex; gap: 36px;">
       <a href="#work" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Work</a>
@@ -51,9 +57,9 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <header id="top" style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 0 40px;">
+  <header id="top" style="max-width: 1240px; margin: 0 auto; padding: 130px var(--page-pad) 0 var(--page-pad);">
     <p style="margin: 0 0 34px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: #99927F;">Principal Product Manager</p>
-    <h1 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(68px, 10.5vw, 148px); line-height: 0.98; letter-spacing: -0.015em; color: #F3EEE5; text-wrap: balance;">Jose Garcia <em style="font-style: italic; color: #D8D1C2;">Valverde</em></h1>
+    <h1 class="hero-name" style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(68px, 10.5vw, 148px); line-height: 0.98; letter-spacing: -0.015em; color: #F3EEE5; text-wrap: balance;">Jose Garcia <em style="font-style: italic; color: #D8D1C2;">Valverde</em></h1>
     <div class="hero-row" style="display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: end; margin-top: 56px;">
       <p style="margin: 0; max-width: 560px; font-size: 20px; line-height: 1.65; color: #99927F; text-wrap: pretty;">Product leader driving vision and growth for digital products — from 0-to-1 launches to scaling platforms serving millions of users.</p>
       <div style="display: flex; flex-wrap: wrap; gap: 32px; padding-bottom: 6px;">
@@ -65,7 +71,7 @@
   </header>
 
   <!-- ===== METRICS CENTERPIECE ===== -->
-  <section aria-label="Key metrics" style="max-width: 1240px; margin: 110px auto 0 auto; padding: 0 40px;">
+  <section aria-label="Key metrics" style="max-width: 1240px; margin: 110px auto 0 auto; padding: 0 var(--page-pad);">
     <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822;">
       <div style="padding: 56px 40px 56px 0; border-right: 1px solid #2B2822;">
         <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(56px, 6.5vw, 96px); line-height: 1; color: #F3EEE5;"><span style="color: var(--ac, #B0784A);">4</span></p>
@@ -83,7 +89,7 @@
   </section>
 
   <!-- ===== CASE STUDIES ===== -->
-  <section id="work" style="max-width: 1240px; margin: 0 auto; padding: 150px 40px 140px 40px;">
+  <section id="work" style="max-width: 1240px; margin: 0 auto; padding: 150px var(--page-pad) 140px var(--page-pad);">
     <div class="section-head" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
       <h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); color: #F3EEE5;">Selected work</h2>
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">2018 — today</p>
@@ -144,7 +150,7 @@
 
   <!-- ===== CAREER ===== -->
   <section id="career" style="border-top: 1px solid #2B2822;">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 140px 40px;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 130px var(--page-pad) 140px var(--page-pad);">
       <div class="section-head" style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 24px;">
         <h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); color: #F3EEE5;">Career</h2>
       </div>
@@ -165,7 +171,7 @@
 
   <!-- ===== CONTACT ===== -->
   <section id="contact" style="border-top: 1px solid #2B2822;">
-    <div class="contact-grid" style="max-width: 1240px; margin: 0 auto; padding: 130px 40px 120px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;">
+    <div class="contact-grid" style="max-width: 1240px; margin: 0 auto; padding: 130px var(--page-pad) 120px var(--page-pad); display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start;">
       <div style="display: flex; flex-direction: column; gap: 32px;">
         <h2 style="margin: 0; font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 5vw, 72px); line-height: 1.05; color: #F3EEE5; text-wrap: balance;">Let&rsquo;s build something <em style="color: #D8D1C2;">with purpose</em>.</h2>
         <p style="margin: 0; max-width: 460px; font-size: 18px; line-height: 1.7; color: #99927F; text-wrap: pretty;">Feel free to reach out about senior IC, leadership, advisory, or consulting roles. I also mentor junior profiles pro bono.</p>
@@ -205,7 +211,7 @@
 
   <!-- ===== FOOTER ===== -->
   <footer style="border-top: 1px solid #2B2822;">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 36px 40px; display: flex; justify-content: space-between; align-items: baseline;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 36px var(--page-pad); display: flex; justify-content: space-between; align-items: baseline;">
       <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: #6B655A;">Jose Garcia Valverde — 2026</p>
       <a href="#top" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">Back to top ↑</a>
     </div>
