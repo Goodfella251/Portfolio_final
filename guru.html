@@ -37,7 +37,7 @@
   <!-- ===== NAV ===== -->
   <nav style="display: flex; justify-content: space-between; align-items: baseline; max-width: 1240px; margin: 0 auto; padding: 36px 40px 0 40px;">
     <a href="index.html" style="font-family: 'Instrument Serif', serif; font-size: 22px; color: #F3EEE5; text-decoration: none;">JGV<span style="color: var(--ac, #B0784A);">.</span></a>
-    <a href="index.html#work" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← All work</a>
+    <a href="index.html#work" onClick="{{ backToWork }}" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← Back to All Work</a>
   </nav>
 
   <!-- ===== HEADER ===== -->
@@ -70,29 +70,12 @@
     </sc-for>
   </section>
 
-  <!-- ===== VISUALS ===== -->
-  <section aria-label="Product visuals" style="max-width: 1240px; margin: 0 auto; padding: 110px 40px 0 40px;">
-    <div class="visuals-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
-      <div style="aspect-ratio: 16 / 9; background: repeating-linear-gradient(45deg, #1C1915 0px, #1C1915 12px, #17150F 12px, #17150F 24px); border: 1px solid #2B2822; display: flex; align-items: center; justify-content: center;">
-        <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #6B655A;">{{ slotLabelA }}</p>
-      </div>
-      <div class="visual-side" style="display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
-        <div style="background: #1C1915; border: 1px solid #2B2822; overflow: hidden;">
-          <img src="assets/guru.png" alt="Guru Internal Platform brand" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        </div>
-        <div style="background: repeating-linear-gradient(45deg, #1C1915 0px, #1C1915 12px, #17150F 12px, #17150F 24px); border: 1px solid #2B2822; display: flex; align-items: center; justify-content: center;">
-          <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #6B655A;">{{ slotLabelB }}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ===== OUTCOME ===== -->
   <section style="max-width: 1240px; margin: 0 auto; padding: 140px 40px 130px 40px;">
     <div style="border-top: 1px solid #2B2822; padding-top: 72px;">
       <p style="margin: 0 0 40px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">The outcome</p>
       <p style="margin: 0; max-width: 900px; font-family: 'Instrument Serif', serif; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.25; color: #F3EEE5; text-wrap: balance;">{{ outcome }}</p>
-      <a href="index.html#work" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to all work</a>
+      <a href="index.html#work" onClick="{{ backToWork }}" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to All Work</a>
     </div>
   </section>
 
@@ -106,15 +89,30 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — AB InBev, 2019 · 2020&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Guru Internal Platform&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Product Manager, Finance Systems. A zero-downtime, zero-bug launch of a critical internal finance platform.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;A business-critical finance platform launched with zero downtime and zero bugs — and users who actually liked the change, at NPS 33.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — AB InBev, 2019 · 2020&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Guru Internal Platform&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Directed the rollout of a custom Salesforce approval flow, successfully managing the adoption process and optimizing payment operations for the finance department.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;A business-critical finance platform launched with zero downtime and zero bugs — and users who actually liked the change, at NPS 33.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
+  // Return to the visitor's previous scroll position on the homepage when they
+  // navigated here from it; direct visitors fall through to the #work anchor.
+  backToWork = (e) => {
+    let fromHome = false;
+    try {
+      const ref = new URL(document.referrer);
+      fromHome = ref.origin === location.origin && (/(^|\/)index\.html$/.test(ref.pathname) || /\/$/.test(ref.pathname));
+    } catch (err) {}
+    if (fromHome && history.length > 1) {
+      e.preventDefault();
+      history.back();
+    }
+  };
+
   renderVals() {
     const p = this.props;
     return {
+      backToWork: this.backToWork,
       accent: p.accent ?? '#B0784A',
       kicker: p.kicker ?? 'Case study — AB InBev, 2019 · 2020',
       title: p.title ?? 'Guru Internal Platform',
-      subtitle: p.subtitle ?? 'Product Manager, Finance Systems. A zero-downtime, zero-bug launch of a critical internal finance platform.',
+      subtitle: p.subtitle ?? 'Directed the rollout of a custom Salesforce approval flow, successfully managing the adoption process and optimizing payment operations for the finance department.',
       metrics: p.metrics ?? [
         { value: '0', label: 'Downtime and launch bugs' },
         { value: 'NPS 33', label: 'Post-launch satisfaction' },
@@ -122,19 +120,17 @@ class Component extends DCLogic {
       sections: p.sections ?? [
         {
           label: 'The problem',
-          text: 'Guru sat at the heart of AB InBev\u2019s European finance operations — a platform the business could not afford to see fail. Replacing it meant migrating critical workflows for teams across the continent with no tolerance for downtime or data errors.',
+          text: 'AB InBev was going through a digital transformation. The old ticketing system to manage EPAPs (Exceptional Payment Approval Processes) was going to be deprecated. So it had to be replaced with a new one.',
+        },
+        {
+          label: 'The solution',
+          text: 'I captured essential requirements and mapped approval workflows directly with the finance team, breaking them down into Epics for our developers in India. After thorough collaborative testing with our initial users, we successfully deployed the platform to the entire Zone Europe region.',
         },
         {
           label: 'My role',
-          text: 'I owned the launch end to end as Product Manager for Finance Systems: release planning, risk management, and the change management programme that had to bring every affected team along.',
-        },
-        {
-          label: 'The approach',
-          text: 'Relentless de-risking — staged rollouts, exhaustive UAT with the finance teams themselves, and 10 in-person training sessions across Europe so no one met the platform for the first time on launch day. The result: zero downtime, zero bugs, NPS 33.',
+          text: 'After nine months of dedicated engineering, we launched Guru with zero downtime. This seamless deployment was vital to avoid disrupting payments for thousands of AB InBev suppliers and contractors. To guarantee a smooth transition, I directed 10 comprehensive training sessions across Zone Europe to educate our workforce and actively address their feedback.',
         },
       ],
-      slotLabelA: '[ hi-res platform screenshot ]',
-      slotLabelB: '[ dashboard / workflow shot ]',
       outcome: p.outcome ?? 'A business-critical finance platform launched with zero downtime and zero bugs — and users who actually liked the change, at NPS 33.',
     };
   }

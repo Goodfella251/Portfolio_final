@@ -37,7 +37,7 @@
   <!-- ===== NAV ===== -->
   <nav style="display: flex; justify-content: space-between; align-items: baseline; max-width: 1240px; margin: 0 auto; padding: 36px 40px 0 40px;">
     <a href="index.html" style="font-family: 'Instrument Serif', serif; font-size: 22px; color: #F3EEE5; text-decoration: none;">JGV<span style="color: var(--ac, #B0784A);">.</span></a>
-    <a href="index.html#work" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← All work</a>
+    <a href="index.html#work" onClick="{{ backToWork }}" style="font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #99927F; text-decoration: none;" style-hover="color: var(--ac, #B0784A);">← Back to All Work</a>
   </nav>
 
   <!-- ===== HEADER ===== -->
@@ -49,8 +49,8 @@
 
   <!-- ===== METRIC BAND ===== -->
   <section aria-label="Key metrics" style="max-width: 1240px; margin: 100px auto 0 auto; padding: 0 40px;">
-    <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822; overflow: hidden;">
-      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="3">
+    <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid #2B2822; border-bottom: 1px solid #2B2822; overflow: hidden;">
+      <sc-for list="{{ metrics }}" as="m" hint-placeholder-count="2">
         <div style="padding: 56px 32px; border-right: 1px solid #2B2822; margin-right: -1px;">
           <div style="width: 28px; height: 2px; background: var(--ac, #B0784A); margin-bottom: 28px;"></div>
           <p style="margin: 0; font-family: 'Instrument Serif', serif; font-size: clamp(52px, 6vw, 88px); line-height: 1; color: #F3EEE5;">{{ m.value }}</p>
@@ -92,7 +92,7 @@
     <div style="border-top: 1px solid #2B2822; padding-top: 72px;">
       <p style="margin: 0 0 40px 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #99927F;">The outcome</p>
       <p style="margin: 0; max-width: 900px; font-family: 'Instrument Serif', serif; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.25; color: #F3EEE5; text-wrap: balance;">{{ outcome }}</p>
-      <a href="index.html#work" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to all work</a>
+      <a href="index.html#work" onClick="{{ backToWork }}" style="display: inline-block; margin-top: 64px; font-size: 15px; color: #F3EEE5; text-decoration: none; border-bottom: 1px solid var(--ac, #B0784A); padding-bottom: 4px;" style-hover="color: var(--ac, #B0784A);">← Back to All Work</a>
     </div>
   </section>
 
@@ -106,37 +106,51 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — STRV, 2023 · 2024&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Roeme&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Senior Product Manager. A consumer fitness app — the second product I delivered from concept to market-ready release at STRV.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;A second consumer product taken from concept to market-ready inside 13 months — proof the 0-to-1 playbook repeats.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — STRV, 2023 · 2024&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Roeme&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Senior Product Manager. An on-demand fitness platform providing access to diverse gyms and boutique studios without the constraint of a long-term contract&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Took a consumer app from concept to market-ready in under six months, launching successfully and immediately acquiring paid customers.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
+  // Return to the visitor's previous scroll position on the homepage when they
+  // navigated here from it; direct visitors fall through to the #work anchor.
+  backToWork = (e) => {
+    let fromHome = false;
+    try {
+      const ref = new URL(document.referrer);
+      fromHome = ref.origin === location.origin && (/(^|\/)index\.html$/.test(ref.pathname) || /\/$/.test(ref.pathname));
+    } catch (err) {}
+    if (fromHome && history.length > 1) {
+      e.preventDefault();
+      history.back();
+    }
+  };
+
   renderVals() {
     const p = this.props;
     return {
+      backToWork: this.backToWork,
       accent: p.accent ?? '#B0784A',
       kicker: p.kicker ?? 'Case study — STRV, 2023 · 2024',
       title: p.title ?? 'Roeme',
-      subtitle: p.subtitle ?? 'Senior Product Manager. A consumer fitness app — the second product I delivered from concept to market-ready release at STRV.',
+      subtitle: p.subtitle ?? 'Senior Product Manager. An on-demand fitness platform providing access to diverse gyms and boutique studios without the constraint of a long-term contract',
       metrics: p.metrics ?? [
         { value: '0\u21921', label: 'Concept to market-ready' },
         { value: '2', label: 'Native platforms shipped' },
-        { value: '2nd', label: 'Product delivered in 13 months' },
       ],
       sections: p.sections ?? [
         {
           label: 'The problem',
-          text: 'A crowded fitness market and a client betting on a differentiated take — Roeme needed a sharp product definition to avoid becoming another generic workout tracker, and it needed to ship on both platforms without a bloated timeline.',
+          text: 'Traditional gym memberships lock users into rigid contracts. At the same time, people crave workout variety but cannot afford to pay for multiple specialized studio subscriptions. This inflexibility especially impacts frequent travelers and busy professionals who struggle to maintain a routine when tied to a single physical location. Ultimately, consumers need a low-risk alternative that eliminates commitment anxiety by allowing them to pay only for the exact classes they attend.',
+        },
+        {
+          label: 'The solution',
+          text: 'Meet Roeme, a flexible fitness platform giving users the freedom to select any studio or workout without membership fees. Simply sign up for a specific class, pay on demand, and walk right in.',
         },
         {
           label: 'My role',
-          text: 'I owned the full lifecycle for the second time in a year: concept, roadmap, budget, delivery team, and C-level stakeholder expectations — running Roeme with the discipline learned shipping my previous mobile product.',
-        },
-        {
-          label: 'The approach',
-          text: 'Reuse what worked, cut what didn\u2019t: the delivery playbook from my previous launch compressed discovery, and a focus on one core habit loop kept scope honest. Both native apps reached market-ready release.',
+          text: 'I owned the full lifecycle: concept, roadmap, budget management, delivery team, and C-level stakeholder expectations.',
         },
       ],
       slotLabelA: '[ hi-res app screenshots ]',
       slotLabelB: '[ workout flow shot ]',
-      outcome: p.outcome ?? 'A second consumer product taken from concept to market-ready inside 13 months — proof the 0-to-1 playbook repeats.',
+      outcome: p.outcome ?? 'Took a consumer app from concept to market-ready in under six months, launching successfully and immediately acquiring paid customers.',
     };
   }
 }

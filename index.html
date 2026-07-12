@@ -224,6 +224,39 @@ class Component extends DCLogic {
   // Get your access key at https://web3forms.com (sent to your email, free)
   WEB3FORMS_ACCESS_KEY = '49a174fe-c79a-4041-9b7f-baaf3d5244c0';
 
+  // Persist the scroll position so "Back to All Work" on a case study returns
+  // here at the same spot even when the back/forward cache misses and the
+  // page fully reloads (content renders late, so native restoration can fail).
+  saveScroll = () => {
+    try { sessionStorage.setItem('homeScrollY', String(window.scrollY)); } catch (err) {}
+  };
+
+  restoreScroll = () => {
+    let y = 0;
+    try { y = parseFloat(sessionStorage.getItem('homeScrollY')) || 0; } catch (err) {}
+    if (!y) return;
+    const deadline = Date.now() + 3000;
+    const tick = () => {
+      const maxY = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxY >= y || Date.now() > deadline) {
+        window.scrollTo({ top: y, left: 0, behavior: 'instant' });
+      } else {
+        requestAnimationFrame(tick);
+      }
+    };
+    requestAnimationFrame(tick);
+  };
+
+  componentDidMount() {
+    window.addEventListener('pagehide', this.saveScroll);
+    const nav = performance.getEntriesByType('navigation')[0];
+    if (nav && nav.type === 'back_forward') this.restoreScroll();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('pagehide', this.saveScroll);
+  }
+
   submitForm = async (e) => {
     e.preventDefault();
     const form = e.target;
