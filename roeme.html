@@ -24,6 +24,7 @@
       .visual-side { grid-template-rows: none !important; }
       .visuals-grid > div, .visual-side > div { min-width: 0; }
       .visual-side > div { aspect-ratio: 16 / 9; }
+      .roeme-visuals-grid { grid-template-columns: 1fr !important; max-width: 360px; margin-left: auto; margin-right: auto; }
     }
 
     @media (max-width: 520px) {
@@ -72,20 +73,26 @@
 
   <!-- ===== VISUALS ===== -->
   <section aria-label="Product visuals" style="max-width: 1240px; margin: 0 auto; padding: 110px 40px 0 40px;">
-    <div class="visuals-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
-      <div style="aspect-ratio: 16 / 9; background: repeating-linear-gradient(45deg, #1C1915 0px, #1C1915 12px, #17150F 12px, #17150F 24px); border: 1px solid #2B2822; display: flex; align-items: center; justify-content: center;">
-        <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #6B655A;">{{ slotLabelA }}</p>
+    <div class="roeme-visuals-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div onClick="{{ openLightboxHome }}" style="aspect-ratio: 9 / 16; background: #1C1915; border: 1px solid #2B2822; overflow: hidden; display: flex; align-items: flex-start; justify-content: center; cursor: zoom-in;">
+        <img src="assets/roeme_Home.png" alt="Roeme home feed" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
       </div>
-      <div class="visual-side" style="display: grid; grid-template-rows: 1fr 1fr; gap: 24px;">
-        <div style="background: #1C1915; border: 1px solid #2B2822; overflow: hidden;">
-          <img src="assets/roeme.png" alt="Roeme brand" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        </div>
-        <div style="background: repeating-linear-gradient(45deg, #1C1915 0px, #1C1915 12px, #17150F 12px, #17150F 24px); border: 1px solid #2B2822; display: flex; align-items: center; justify-content: center;">
-          <p style="margin: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; letter-spacing: 0.1em; color: #6B655A;">{{ slotLabelB }}</p>
-        </div>
+      <div onClick="{{ openLightboxBook }}" style="aspect-ratio: 9 / 16; background: #1C1915; border: 1px solid #2B2822; overflow: hidden; display: flex; align-items: flex-start; justify-content: center; cursor: zoom-in;">
+        <img src="assets/roeme_Book.png" alt="Roeme class booking" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+      </div>
+      <div onClick="{{ openLightboxCheckout }}" style="aspect-ratio: 9 / 16; background: #1C1915; border: 1px solid #2B2822; overflow: hidden; display: flex; align-items: flex-start; justify-content: center; cursor: zoom-in;">
+        <img src="assets/roeme_ Booking_ Checkout.png" alt="Roeme booking checkout" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
       </div>
     </div>
   </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <sc-if value="{{ lightboxOpen }}">
+    <div onClick="{{ closeLightbox }}" style="position: fixed; inset: 0; z-index: 1000; background: rgba(10,9,7,0.92); display: flex; align-items: center; justify-content: center; padding: 40px; backdrop-filter: blur(4px);">
+      <button onClick="{{ closeLightbox }}" aria-label="Close" style="position: absolute; top: 28px; right: 32px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #2B2822; background: #1C1915; color: #F3EEE5; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="color: var(--ac, #B0784A); border-color: var(--ac, #B0784A);">&times;</button>
+      <img src="{{ lightboxSrc }}" alt="{{ lightboxAlt }}" onClick="{{ stopPropagation }}" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block; box-shadow: 0 20px 60px rgba(0,0,0,0.5);">
+    </div>
+  </sc-if>
 
   <!-- ===== OUTCOME ===== -->
   <section style="max-width: 1240px; margin: 0 auto; padding: 140px 40px 130px 40px;">
@@ -108,6 +115,8 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B0784A&quot;,&quot;options&quot;:[&quot;#E26A33&quot;,&quot;#D9A441&quot;,&quot;#B0784A&quot;,&quot;#C8502E&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;kicker&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Case study — STRV, 2023 · 2024&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Roeme&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Senior Product Manager. An on-demand fitness platform providing access to diverse gyms and boutique studios without the constraint of a long-term contract&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;metrics&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{value: string, label: string}[]&quot;},&quot;sections&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{label: string, text: string}[]&quot;},&quot;outcome&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Took a consumer app from concept to market-ready in under six months, launching successfully and immediately acquiring paid customers.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
+  state = { lightboxSrc: null, lightboxAlt: '' };
+
   // Return to the visitor's previous scroll position on the homepage when they
   // navigated here from it; direct visitors fall through to the #work anchor.
   backToWork = (e) => {
@@ -122,10 +131,24 @@ class Component extends DCLogic {
     }
   };
 
+  openLightboxHome = () => this.setState({ lightboxSrc: 'assets/roeme_Home.png', lightboxAlt: 'Roeme home feed' });
+  openLightboxBook = () => this.setState({ lightboxSrc: 'assets/roeme_Book.png', lightboxAlt: 'Roeme class booking' });
+  openLightboxCheckout = () => this.setState({ lightboxSrc: 'assets/roeme_ Booking_ Checkout.png', lightboxAlt: 'Roeme booking checkout' });
+  closeLightbox = () => this.setState({ lightboxSrc: null, lightboxAlt: '' });
+  stopPropagation = (e) => e.stopPropagation();
+
   renderVals() {
     const p = this.props;
     return {
       backToWork: this.backToWork,
+      openLightboxHome: this.openLightboxHome,
+      openLightboxBook: this.openLightboxBook,
+      openLightboxCheckout: this.openLightboxCheckout,
+      closeLightbox: this.closeLightbox,
+      stopPropagation: this.stopPropagation,
+      lightboxOpen: !!this.state.lightboxSrc,
+      lightboxSrc: this.state.lightboxSrc,
+      lightboxAlt: this.state.lightboxAlt,
       accent: p.accent ?? '#B0784A',
       kicker: p.kicker ?? 'Case study — STRV, 2023 · 2024',
       title: p.title ?? 'Roeme',
@@ -148,8 +171,6 @@ class Component extends DCLogic {
           text: 'I owned the full lifecycle: concept, roadmap, budget management, delivery team, and C-level stakeholder expectations.',
         },
       ],
-      slotLabelA: '[ hi-res app screenshots ]',
-      slotLabelB: '[ workout flow shot ]',
       outcome: p.outcome ?? 'Took a consumer app from concept to market-ready in under six months, launching successfully and immediately acquiring paid customers.',
     };
   }
